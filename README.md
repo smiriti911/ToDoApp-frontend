@@ -24,15 +24,19 @@ Deployment: Vercel
 
 ![Screenshot 2025-03-26 173956](https://github.com/user-attachments/assets/c60f5e2f-2d9e-447b-af80-c0e9f2a6aaea)
 
-1️⃣ Clone the Repository
+## 🚀 Setup Instructions
 
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/your-username/todo-app.git
 cd todo-app
 
-2️⃣ Install Dependencies
 
+2️⃣ Install Dependencies
+```bash
 npm install
 
 3️⃣ Start the App
+```bash
 npm start
 

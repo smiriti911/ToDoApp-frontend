@@ -11,10 +11,7 @@ function App() {
     <div className="bg-neutral-800 min-h-screen flex items-center justify-center">
       <Router>
         <Routes>
-          {/* Redirect to /todo if logged in, otherwise show login */}
           <Route path="/" element={isAuthenticated ? <Navigate to="/todo" /> : <Login />} />
-          
-          {/* Protected To-Do Page */}
           <Route path="/todo" element={isAuthenticated ? <ToDo /> : <Navigate to="/" />} />
         </Routes>
       </Router>

@@ -62,16 +62,16 @@ const ToDo = () => {
         </button>
       </div>
 
-    {/* Input */}
-<div className="flex flex-wrap items-center bg-neutral-100 rounded-full mt-10 w-full">
+  {/* Input Section */}
+<div className="flex flex-wrap items-center bg-neutral-100 rounded-full mt-10 w-full p-1">
   <input
     type="text"
     placeholder="Add your task"
-    className="bg-transparent border-0 outline-none flex-1 h-14 pl-4 placeholder:text-neutral-600 min-w-0"
+    className="bg-transparent border-0 outline-none flex-1 h-10 pl-4 placeholder:text-neutral-600 min-w-0"
     ref={inputRef}
   />
   <select
-    className="bg-neutral-800 text-white h-14 px-4 text-lg font-semibold cursor-pointer flex-shrink-0 max-w-xs"
+    className="bg-neutral-800 text-white h-10 w-20 text-sm font-semibold cursor-pointer flex-shrink-0 rounded-l-md"
     value={priority}
     onChange={(e) => setPriority(e.target.value)}
   >
@@ -80,7 +80,7 @@ const ToDo = () => {
     <option value="Low">Low</option>
   </select>
   <button
-    className="bg-neutral-800 text-white h-14 px-4 rounded-r-full text-lg font-semibold cursor-pointer flex-shrink-0 max-w-xs"
+    className="bg-neutral-800 text-white h-10 w-20 text-sm font-semibold cursor-pointer flex-shrink-0 rounded-r-full"
     onClick={add}
   >
     Add +

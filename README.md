@@ -1,8 +1,8 @@
-📝 Project Overview
+### 📝 Project Overview
 
 This is a React-Redux To-Do App with authentication and weather updates. Users can log in, add tasks, filter them by status or priority, and get real-time weather updates. The app is built using the React JS and Redux and deployed on Vercel.
 
-📌 Features
+### 📌 Features
 
 ✅ User Authentication: Simple login system using Redux.
 
@@ -16,7 +16,7 @@ This is a React-Redux To-Do App with authentication and weather updates. Users c
 
 ✅ Mobile-Friendly UI: Fully responsive design.
 
-🚀 Tech Stack
+### 🚀 Tech Stack
 
 Frontend: React, Redux Toolkit, Tailwind CSS
 
@@ -25,10 +25,10 @@ API: Weather API (for weather updates)
 Deployment: Vercel
 
 
-1️⃣ Login Page
+### 1️⃣ Login Page
 ![Screenshot 2025-03-26 174029](https://github.com/user-attachments/assets/8fd8b5a3-9b5c-478e-b8a8-b8537fb853e3)
 
-2️⃣ To-Do List
+### 2️⃣ To-Do List
 
 ![Screenshot 2025-03-26 173956](https://github.com/user-attachments/assets/c60f5e2f-2d9e-447b-af80-c0e9f2a6aaea)
 
@@ -40,11 +40,11 @@ git clone https://github.com/your-username/todo-app.git
 cd todo-app
 ```
 
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
 ```bash
 npm install
 ```
-3️⃣ Start the App
+### 3️⃣ Start the App
 ```bash
 npm start
 ```

@@ -3,7 +3,9 @@ This is a React-Redux To-Do App with authentication and weather updates. Users c
 
 📌 Features
 ✅ User Authentication: Simple login system using Redux.
+
 ✅ To-Do List: Add, remove, and update tasks.
+
 ✅ Priority & Sorting: Categorize tasks by priority and sort them easily.
 ✅ Weather Updates: Shows current weather using an API.
 ✅ Persistent State: Data is stored using localStorage.

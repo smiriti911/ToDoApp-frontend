@@ -62,27 +62,31 @@ const ToDo = () => {
         </button>
       </div>
 
-      {/* Input */}
-      <div className="flex items-center bg-neutral-100 rounded-full mt-10">
-        <input
-          type="text"
-          placeholder="Add your task"
-          className="bg-transparent border-0 outline-none flex-1 h-14 pl-6 placeholder:text-neutral-600"
-          ref={inputRef}
-        />
-        <select
-          className="bg-neutral-800 text-white h-14 w-24 text-lg font-semibold cursor-pointer"
-          value={priority}
-          onChange={(e) => setPriority(e.target.value)}
-        >
-          <option value="High">High</option>
-          <option value="Medium">Medium</option>
-          <option value="Low">Low</option>
-        </select>
-        <button className="bg-neutral-800 text-white h-14 w-24 rounded-r-full text-lg font-semibold cursor-pointer" onClick={add}>
-          Add +
-        </button>
-      </div>
+    {/* Input */}
+<div className="flex flex-wrap items-center bg-neutral-100 rounded-full mt-10 w-full">
+  <input
+    type="text"
+    placeholder="Add your task"
+    className="bg-transparent border-0 outline-none flex-1 h-14 pl-4 placeholder:text-neutral-600 min-w-0"
+    ref={inputRef}
+  />
+  <select
+    className="bg-neutral-800 text-white h-14 px-4 text-lg font-semibold cursor-pointer flex-shrink-0 max-w-xs"
+    value={priority}
+    onChange={(e) => setPriority(e.target.value)}
+  >
+    <option value="High">High</option>
+    <option value="Medium">Medium</option>
+    <option value="Low">Low</option>
+  </select>
+  <button
+    className="bg-neutral-800 text-white h-14 px-4 rounded-r-full text-lg font-semibold cursor-pointer flex-shrink-0 max-w-xs"
+    onClick={add}
+  >
+    Add +
+  </button>
+</div>
+
 
       {/* Filters and Sorting */}
       <div className="flex justify-between my-3">

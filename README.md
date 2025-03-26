@@ -30,13 +30,13 @@ Deployment: Vercel
 ```bash
 git clone https://github.com/your-username/todo-app.git
 cd todo-app
-
+```
 
 2️⃣ Install Dependencies
 ```bash
 npm install
-
+```
 3️⃣ Start the App
 ```bash
 npm start
-
+```

@@ -62,7 +62,7 @@ const ToDo = () => {
       </div>
 
       {/* Input Section */}
-      <div className="flex flex-wrap items-center bg-neutral-100 rounded-full mt-6 w-full p-2">
+      <div className="flex flex-wrap items-center bg-neutral-100 rounded-full mt-6 w-full">
         <input
           type="text"
           placeholder="Add your task"

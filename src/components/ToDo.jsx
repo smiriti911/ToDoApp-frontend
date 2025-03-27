@@ -40,7 +40,7 @@ const ToDo = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <FaCalendarCheck size={32} />
-          <h1 className="text-3xl font-bold text-neutral-800">To Do List</h1>
+          <h1 className="text-3xl font-bold text-neutral-800">To Do</h1>
         </div>
 
         {/* Weather Section */}

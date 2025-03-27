@@ -2,19 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaCalendarCheck } from "react-icons/fa";
 import { logout } from "../redux/authSlice";
-import { fetchWeather } from "../redux/weatherSlice"; // Import weather action
+import { fetchWeather } from "../redux/weatherSlice";
 import { addTodo, setFilter, setSort, selectFilteredSortedTodos } from "../redux/todoSlice";
 import ToDolist from "./ToDolist";
 
 const ToDo = () => {
   const dispatch = useDispatch();
-  const todos = useSelector(selectFilteredSortedTodos); // Removed pagination selector
+  const todos = useSelector(selectFilteredSortedTodos);
   const { filter, sort } = useSelector((state) => state.todo);
-  const { temp, city, icon, status } = useSelector((state) => state.weather); // Get weather data
+  const { temp, city, icon, status } = useSelector((state) => state.weather);
   const [priority, setPriority] = useState("Low");
   const inputRef = useRef();
 
-  // Fetch weather when component mounts
   useEffect(() => {
     dispatch(fetchWeather());
   }, [dispatch]);
@@ -35,63 +34,62 @@ const ToDo = () => {
   };
 
   return (
-    <div className="bg-white place-self-center w-10/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl">
-      {/* Header with Weather & Logout */}
-      <div className="flex items-center justify-between">
+    <div className="bg-white w-full max-w-md mx-auto flex flex-col p-5 min-h-[550px] rounded-xl shadow-md ">
+      {/* Header */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <FaCalendarCheck size={32} />
-          <h1 className="text-3xl font-bold text-neutral-800">To Do</h1>
+          <FaCalendarCheck size={28} />
+          <h1 className="text-2xl sm:text-3xl font-bold text-neutral-800">To Do</h1>
         </div>
 
         {/* Weather Section */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-sm">
           {status === "loading" ? (
-            <p className="text-gray-500 text-sm">Fetching weather...</p>
+            <p className="text-gray-500">Fetching weather...</p>
           ) : status === "failed" ? (
-            <p className="text-red-500 text-sm">Weather Unavailable</p>
+            <p className="text-red-500">Weather Unavailable</p>
           ) : (
             <>
-              <img src={icon} alt="weather" className="w-8 h-8" />
+              <img src={icon} alt="weather" className="w-6 h-6 sm:w-8 sm:h-8" />
               <p className="text-gray-700">{city} {temp}°C</p>
             </>
           )}
         </div>
 
-        <button onClick={() => dispatch(logout())} className="text-red-500 font-semibold cursor-pointer">
+        <button onClick={() => dispatch(logout())} className="text-red-500 font-semibold text-sm sm:text-base">
           Logout
         </button>
       </div>
 
-  {/* Input Section */}
-<div className="flex flex-wrap items-center bg-neutral-100 rounded-full mt-10 w-full">
-  <input
-    type="text"
-    placeholder="Add your task"
-    className="bg-transparent border-0 outline-none flex-1 h-10 pl-4 placeholder:text-neutral-600 min-w-0"
-    ref={inputRef}
-  />
-  <select
-    className="bg-neutral-800 text-white h-10 w-20 text-sm font-semibold cursor-pointer flex-shrink-0 rounded-l-md"
-    value={priority}
-    onChange={(e) => setPriority(e.target.value)}
-  >
-    <option value="High">High</option>
-    <option value="Medium">Medium</option>
-    <option value="Low">Low</option>
-  </select>
-  <button
-    className="bg-neutral-800 text-white h-10 w-20 text-sm font-semibold cursor-pointer flex-shrink-0 rounded-r-full"
-    onClick={add}
-  >
-    Add +
-  </button>
-</div>
-
+      {/* Input Section */}
+      <div className="flex flex-wrap items-center bg-neutral-100 rounded-full mt-6 w-full p-2">
+        <input
+          type="text"
+          placeholder="Add your task"
+          className="bg-transparent border-0 outline-none flex-1 h-10 pl-3 placeholder:text-neutral-600 min-w-0 text-sm"
+          ref={inputRef}
+        />
+        <select
+          className="bg-neutral-800 text-white h-10 w-20 text-xs sm:text-sm font-semibold cursor-pointer flex-shrink-0 rounded-l-md"
+          value={priority}
+          onChange={(e) => setPriority(e.target.value)}
+        >
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+        <button
+          className="bg-neutral-800 text-white h-10 w-20 text-xs sm:text-sm font-semibold cursor-pointer flex-shrink-0 rounded-r-full"
+          onClick={add}
+        >
+          Add +
+        </button>
+      </div>
 
       {/* Filters and Sorting */}
-      <div className="flex justify-between my-3">
+      <div className="flex flex-wrap justify-between my-3 gap-2">
         <select
-          className="border bg-neutral-900 text-white w-20 rounded-2xl p-2 ml-2"
+          className="border bg-neutral-900 text-white w-24 sm:w-28 rounded-2xl p-2 text-xs sm:text-sm"
           value={filter}
           onChange={(e) => dispatch(setFilter(e.target.value))}
         >
@@ -101,7 +99,7 @@ const ToDo = () => {
         </select>
 
         <select
-          className="border bg-neutral-900 text-white w-24 rounded-2xl p-2 mr-2"
+          className="border bg-neutral-900 text-white w-28 sm:w-32 rounded-2xl p-2 text-xs sm:text-sm"
           value={sort}
           onChange={(e) => dispatch(setSort(e.target.value))}
         >

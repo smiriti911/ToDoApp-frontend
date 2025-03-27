@@ -8,7 +8,7 @@ function App() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   return (
-    <div className="bg-neutral-800 min-h-screen flex items-center justify-center">
+    <div className="bg-neutral-800 min-h-screen flex items-center justify-center p-4">
       <Router>
         <Routes>
           <Route path="/" element={isAuthenticated ? <Navigate to="/todo" /> : <Login />} />

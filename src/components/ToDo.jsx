@@ -47,7 +47,7 @@ const ToDo = () => {
           {status === "loading" ? (
             <p className="text-gray-500">Fetching weather...</p>
           ) : status === "failed" ? (
-            <p className="text-red-500">Weather Unavailable</p>
+            <p className="text-red-500">Weather Unavailable in your location</p>
           ) : (
             <>
               <img src={icon} alt="weather" className="w-6 h-6 sm:w-8 sm:h-8" />

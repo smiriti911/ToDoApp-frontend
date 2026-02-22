@@ -4,7 +4,7 @@ import { login } from "../redux/authSlice";
 
 const Login = () => {
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState(""); // New state for password
+  const [password, setPassword] = useState(""); 
   const dispatch = useDispatch();
 
   const handleLogin = () => {

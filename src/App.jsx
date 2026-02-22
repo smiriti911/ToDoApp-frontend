@@ -6,7 +6,7 @@ import Login from "./components/Login";
 
 function App() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-
+  console.log("Authentication status:", isAuthenticated);
   return (
     <div className="bg-neutral-800 min-h-screen flex items-center justify-center p-4">
       <Router>
